@@ -26,20 +26,20 @@ In the data modeling section, I start from a baseline logistic regression using 
 
 ### First model
 
-- Train and test accuracies:[81.98%, 81.33%]
+- Train and test accuracies:[81.69%, 82.20%]
 - The number of false positives, 252, seems material but low, given the roughly 27,000 predicitions.
 - Doctor recommendation appears to be the most important feature
 
 ### Initial tree model
 
-- Train and test accuracies:[82.00%, 81.05%]
+- Train and test accuracies:[81.73%, 82.35%]
 - Accuracy scores are very similar for test and train set (also to logistic regression).  Since there appears to be underfitting (marginally higher accuracy on test set), it may make sense to build a more complex tree to try to pick up on more patters in the training set.
 
 ### Final model (tree)
 
-- Train and test accuracies:[82.02%, 81.56%]
+- Train and test accuracies:[81.75%, 82.38%]
 - The accuracy scores in this more complex tree are highly similar to the initial tree, however the training and test scores have slightly improved and converged.  This suggests that we now have a marginally improved model. 
-- The confusion matrix is similar for both iterations of the tree model (269 false positives vs. 266 in final), as expected given there was only a slight improvement in accuracy.  Compared to the baseline model, even though there are greater false positives in the trees, our greatest concern, our total correct predictions, has increased.  Thus even though the tree models would incorrectly classify more unvaccinated persons and therefore result in less resources for that population, given the higher accuracy and greater correct predictions (and lower false negatives) of the big_tree model (see below), resources would be better conserved and allocated by relying on the big_tree model.
+- The confusion matrix is similar for both iterations of the tree model (271 false positives vs. 271 in final), as expected given there was only a slight improvement in accuracy.  Compared to the baseline model, even though there are greater false positives in the trees, our greatest concern, our total correct predictions, has increased.  Thus even though the tree models would incorrectly classify more unvaccinated persons and therefore result in less resources for that population, given the higher accuracy and greater correct predictions (and lower false negatives) of the big_tree model (see below), resources would be better conserved and allocated by relying on the big_tree model.
 
 ![CnfmtrxFinal](./Images/CnfmtrxFinal.png)
 
@@ -48,7 +48,7 @@ In the data modeling section, I start from a baseline logistic regression using 
 
 - The results show that the **big_tree model is the preferred model** given its higher accuracy on the training and test sets compared to both the first tree iteration and the baseline logistic regression model.  
 - Given that this model performs better than the other models and better than the simple strategy of guessing the majority class for each prediction, **it is recommended that this model be used to predict whether or not individuals have been given the vaccine** for any virus similar to H1N1, so that resources can be allocated efficiently based on one's vaccine status.  
-- More generally, the models show us that the three factors, **presence of a doctor reccomendation, opinion of virus risk, and opinion of vaccine effectiveness**, are significantly related to whether one has received the vaccine. This suggest that it would be beneficial to both increase outreach to those with low presence of these factors and to provide outreach that may could educate and provide resources so that such persons may become more likely to receive a vaccine. 
+- More generally, the models show us that the three factors, **presence of a doctor reccomendation, opinion of virus risk, and opinion of vaccine effectiveness**, are significantly related to whether one has received the vaccine. This suggest that it would be beneficial to both increase outreach to those with low presence of these factors and to provide outreach that could provide more medical personnel and educational resources so that such persons may become more likely to receive a vaccine. 
 
 ### Limitations
 
