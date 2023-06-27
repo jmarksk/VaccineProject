@@ -38,7 +38,11 @@ In the data modeling section, I start from a baseline logistic regression using 
 ### Final model (tree)
 
 - Train and test accuracies:[81.75%, 82.38%]
-- The accuracy scores in this more complex tree are highly similar to the initial tree, however the training and test scores have slightly improved and converged.  This suggests that we now have a marginally improved model. 
+- The accuracy scores in this more complex tree are highly similar to the initial tree, however the training and test scores have slightly improved. This suggests that we now have a marginally improved model.
+
+#### Accuracies
+![Accuracies](./Images/Accuracies.png)
+
 - The confusion matrix is similar for both iterations of the tree model (271 false positives vs. 271 in final), as expected given there was only a slight improvement in accuracy.  Compared to the baseline model, even though there are greater false positives in the trees, our greatest concern, our total correct predictions, has increased.  Thus even though the tree models would incorrectly classify more unvaccinated persons and therefore result in less resources for that population, given the higher accuracy and greater correct predictions (and lower false negatives) of the big_tree model (see below), resources would be better conserved and allocated by relying on the big_tree model.
 
 ![CnfmtrxFinal](./Images/CnfmtrxFinal.png)
