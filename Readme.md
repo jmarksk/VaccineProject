@@ -67,3 +67,7 @@ In the data modeling section, I start from a baseline logistic regression using 
 - Presentation_VaccineProject.pdf
 - VaccineProjectNotebook.ipynb
 - VaccineProjectNotebook.pdf
+
+# Future work
+
+I plan to increase the robustness of the project by using the grid search-cross validate method to tune my final model with greater hyperparameter variety.  Additionally, other metrics besides accuracy will be used such as precision, F-1 score, and an error-based metric, in order to more fully understand model performance given the class imbalance. More visualizations and histograms will be included.
